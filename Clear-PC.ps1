@@ -128,3 +128,35 @@ function Clear-IECachedData
 
 #Example:
 Clear-IECachedData -All
+
+
+  <# 
+   .Synopsis 
+    This function empty Folder Deleted items from default Outlook profile 
+   .Description 
+    This function empty Folder Deleted items from default Outlook profile. It 
+    uses the Outlook interop assembly to use the olFolderInBox enumeration. 
+       
+    NAME:  Clear-OutlookDeletedItems
+ #> 
+
+Function Clear-OutlookDeletedItems 
+{ 
+
+ Add-type -assembly "Microsoft.Office.Interop.Outlook" | out-null 
+ $olFolders = "Microsoft.Office.Interop.Outlook.olDefaultFolders" -as [type]  
+ $outlook = new-object -comobject outlook.application 
+ $namespace = $outlook.GetNameSpace("MAPI") 
+ $folder = $namespace.getDefaultFolder($olFolders::olFolderDeletedItems) 
+ $folder.items |  
+ Select-Object -Property Subject, ReceivedTime, Importance, SenderName 
+
+ foreach ($item in $folder.items)
+ {
+     $item.Delete()
+ }
+}
+
+
+#Example:
+Clear-OutlookDeletedItems 
