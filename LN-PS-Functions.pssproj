@@ -34,6 +34,8 @@
     <Compile Include="Add-IISAppPool.source.xml" />
     <Compile Include="Add-WindowsFeatures.ps1" />
     <Compile Include="Analyze-LogFile.ps1" />
+    <Compile Include="Clear-PC.ps1" />
+    <Compile Include="Compare-Files.ps1" />
     <Compile Include="Creat-File-Daily.ps1" />
     <Compile Include="Create-Directory.ps1" />
     <Compile Include="Create-Directory.source.xml" />

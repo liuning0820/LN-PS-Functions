@@ -30,6 +30,9 @@ function Clear-All-EventLog
 
 #Example:Clear-All-EventLog
 Clear-All-EventLog -computername "niliu18"
+
+#Clear-EventLog by LogName
+Clear-EventLog -LogName (Get-EventLog -List).log
 	
 	
 	
