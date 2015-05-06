@@ -161,3 +161,8 @@ end{
     }
 }
 }
+
+
+
+#Example
+Get-HardwareInfo
