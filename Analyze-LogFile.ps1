@@ -29,6 +29,49 @@ Select-String -Path $FilePath -Pattern $KeyWord
 
 
 
+<#
+.SYNOPSIS    
+    Analyze_LogFile_Daily
+.DESCRIPTION 
+    This function will seach the log files base on the keyword.
+.EXAMPLE     
+    Analyze_LogFile_Daily
+.EXAMPLE
+    Analyze_LogFile_Daily -FilePath "C:\Test\" -KeyWord "*|Error|"
+.NOTES       
+    Please keep above information
+#>
+
+
+function Analyze_LogFile_Daily {
+[CmdletBinding()]
+param (
+    [Parameter(HelpMessage="Enter Log File Path, eg C:\Logfiles\*.txt")][string]$RootPath="C:\Logfiles\SA\",
+    [Parameter(HelpMessage="Enter KeyWord Search through the files, eg Error:")][string]$KeyWord="|Error|"
+)
+
+$date = get-date
+$resultFileName = "result"+ $date.ToString("yyyyMMdd")+".txt"
+Write-Host ($RootPath + $resultFileName)
+Write-Host $resultFileName
+if(!(Test-Path ($RootPath+$resultFileName)))
+{
+    new-item -ItemType file -Path ($RootPath+$resultFileName)
+}
+    Write-Host ($RootPath+$resultFileName)
+    $logpath = $RootPath+"*log"+ $date.ToString("yyyyMMdd")+".txt"
+    Clear-Content ($RootPath+$resultFileName)
+    Get-Content $logpath | Where-Object { $_.Contains($KeyWord) }|Set-Content ($RootPath+$resultFileName)
+
+}
+
+
+
+
+
+
+
+
 #
 #Parse and Analyze LogFiles V 0.2
 # *.txt as the source format
