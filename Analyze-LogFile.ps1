@@ -124,38 +124,7 @@ Analyze_LogFile_V2 |Export-Csv C:\Logfiles\Local_Error_Result.csv
 
 
 
-function Clear-All-EventLog
-{
-    [CmdletBinding()]
-    [OutputType([int])]
-    Param
-    (
-        # Param1 help description
-        [Parameter(Mandatory=$true,
-                    ValueFromPipelineByPropertyName=$true,
-                    Position=0)]
-        $computername
-    
 
-    )
-    
-    Begin
-    {
-        $logs = get-eventlog -computername $computername -list | foreach {$_.Log}
-            
-    }
-    Process
-    {
-        $logs | foreach {clear-eventlog -comp $computername -log $_ }
-    }
-    End
-    {
-    }
-}
-
-
-#Example:Clear-All-EventLog
-Clear-All-EventLog -computername "niliu18"
 
 
 
