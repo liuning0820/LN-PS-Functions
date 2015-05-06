@@ -1,0 +1,7 @@
+#
+# Creat_File_Daily.ps1
+# Create File Daily with timestamp in "yyyy-mm-dd" format.
+# Example:
+# 2015-03-30.txt
+# 2015-03-31.txt
+#

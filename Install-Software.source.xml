@@ -1,0 +1,11 @@
+<softwares>
+  <software>
+    <name>Microsoft .NET Framework 4 Client Profile</name>
+    <version>1</version>
+    <path>Microsoft .NET Framework\</path>
+    <run>Microsoft .NET Framework 4.5.1-x86-x64.exe /q /norestart </run>
+    <estimate>00:10:00</estimate>
+    <targetserver>local</targetserver>
+  </software>
+  
+</softwares>

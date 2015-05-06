@@ -1,0 +1,2 @@
+Collect-HardwareInfo.ps1
+This script is an example of how to collect hardware infomration from one or more computers using WMI. The script will accept a single computer name or an array of computer names to collect from.

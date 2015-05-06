@@ -1,0 +1,10 @@
+<iis>
+  <apppools>
+    <!--Batch Application Pools-->
+    <apppool name="ServiceAgentPool" username="AMERICAS\$sadev001" password="fox.bot.hat-232" targetserver="local"/>
+    <apppool name="ServiceHostPool"  username="AMERICAS\$sadev001" password="fox.bot.hat-232" targetserver="local"/>
+    <apppool name="SAHealthCheckPool" username="AMERICAS\$sadev001" password="fox.bot.hat-232" targetserver="local"/>
+    <apppool name="IncidentsServicePool" username="AMERICAS\$sadev001" password="fox.bot.hat-232" targetserver="local"/>
+  </apppools>
+
+</iis>

@@ -1,0 +1,198 @@
+{
+	"MessageHeader": {
+		"CisParentTransactionId": "String content",
+		"CisTransactionId": "String content",
+		"SourceTransactionId": "String content",
+		"SourceJobId": "String content",
+		"DataConcept": "INCIDENT",
+		"DataConceptSubtype": "String content",
+		"TransactionType": 6,
+		"ProcessingInstruction": "String content",
+		"Version": "String content",
+		"UserContext": {
+			"UserRole": 0,
+			"UserId": "QA.IM.HELPDESK.A",
+			"CompanyCode": "MSCUST-A"
+		},
+		"MessageType": "String content",
+		"SupplierCode": "String content",
+		"CustomerCode": "MSCUST-A",
+		"DirectedRoute": {
+			"Owner": "String content",
+			"Name": "String content",
+			"Instance": "String content"
+		},
+		"Source": {
+			"Owner": "HP",
+			"Name": "SM",
+			"Instance": "SMMDEV"
+		},
+		"Destination": {
+			"Owner": "String content",
+			"Name": "String content",
+			"Instance": "String content"
+		},
+		"SourceCreateTime": "\/Date(928167600000-0500)\/",
+		"MessageReceiveTime": "\/Date(928167600000-0500)\/",
+		"RecordCount": 9223372036854775807,
+		"QueryBlock": {
+			"MaxPageSize": 9223372036854775807,
+			"QueryString": "",
+			"Criteria": [{
+				"Field": "IncidentId",
+				"Operator": 0,
+				"Value": "E-IM000008279",
+				"GroupBy": 0
+			},
+			{
+				"Field": "CustomerCode",
+				"Operator": 0,
+				"Value": "MSCUST-A",
+				"GroupBy": 0
+			}]
+		},
+		"MessageResult": {
+			"ReturnCode": 0,
+			"ReturnMessage": "No of records returned 1"
+		}
+	},
+	"Incidents": [{
+		"IncidentId": "E-IM000008279",
+		"Name": "t",
+		"AgentAction": 0,
+		"AffectedConfigurationItemRegulated": false,
+		"AssignmentGroupName": "MSCUST-A GSD",
+		"AssigneeId": "QA.CM.MANAGER",
+		"ClosedTime": "\/Date(-62135575200000-0600)\/",
+		"CompletionCode": "Fault",
+		"Contacts": [{
+			"ITProcessContactRole": 1,
+			"ITProcessContactPerson": {
+				"PersonId": "MSCUST-A GROUP 1",
+				"Name": "MSCUST-A GROUP 1"
+			}
+		}],
+		"CreateTime": "\/Date(1375100517000)\/",
+		"Department": "FINANCE",
+		"Description": "t",
+		"ImpactScope": 1,
+		"IncidentCategory": "complaint",
+		"IncidentSubCategory": "service delivery",
+		"IncidentSubArea": "availability",
+		"IncidentLocation": {
+			"LocationId": "MSCUST-A SATELLITE",
+			"Name": "MSCUST-A SATELLITE",
+			"Type": 0
+		},
+		"IncidentStatus": 18,
+		"InternalDirectLinkUrl": "hp: http:\/\/gsmwebl1.chn.hp.com:8021\/MDEV\/index.do?ctx=docEngine&file=probsummary&query=number%3D%22E-IM000008279%22&action=&title=&queryHash=f0534f54",
+		"JournalUpdates": {
+			"CustomerVisible": false,
+			"Text": "\u000a-----------------------------------------------------------------------\u000a\u000a<0001>Start Work in progress\u000a29\/07\/2013 07:23:19 (dd\/mm\/yyyy hh:mm:ss) UTC\u000a(ASIAPACIFIC_LIPENG) BENZEL, BILL\u000at"
+		},
+		"HistoricActivities": [{
+			"ITProcessRecordId": "E-IM000008279",
+			"ActivityType": "Open",
+			"Description": "t",
+			"CreateTime": "\/Date(1375100518000)\/",
+			"OpenedById": "ASIAPACIFIC_LIPENG",
+			"CustomerVisible": false
+		},
+		{
+			"ITProcessRecordId": "E-IM000008279",
+			"ActivityType": "Notification",
+			"Description": "Incidents has been assigned to - QA.CM.MANAGER, Assignment Group - MSCUST-A GSD",
+			"CreateTime": "\/Date(1375100518000)\/",
+			"OpenedById": "ASIAPACIFIC_LIPENG",
+			"CustomerVisible": false
+		},
+		{
+			"ITProcessRecordId": "E-IM000008279",
+			"ActivityType": "Notification",
+			"Description": "Incidents have been updated and Update Email Notification was sent to - MSCUST-A GSD",
+			"CreateTime": "\/Date(1375100519000)\/",
+			"OpenedById": "ASIAPACIFIC_LIPENG",
+			"CustomerVisible": false
+		},
+		{
+			"ITProcessRecordId": "E-IM000008279",
+			"ActivityType": "Notification",
+			"Description": "The priority of this ticket is higher or equal to the SIM Priority Threshold. Created notification was sent to -MSCUST-A SIM",
+			"CreateTime": "\/Date(1375100519000)\/",
+			"OpenedById": "ASIAPACIFIC_LIPENG",
+			"CustomerVisible": false
+		},
+		{
+			"ITProcessRecordId": "E-IM000008279",
+			"ActivityType": "Status Change",
+			"Description": "Incident Status Change to Work in progress from Owner Assigned\u000at",
+			"CreateTime": "\/Date(1375100602000)\/",
+			"OpenedById": "ASIAPACIFIC_LIPENG",
+			"CustomerVisible": false
+		},
+		{
+			"ITProcessRecordId": "E-IM000008279",
+			"ActivityType": "Start Work in progress",
+			"Description": "t",
+			"CreateTime": "\/Date(1375100602000)\/",
+			"OpenedById": "ASIAPACIFIC_LIPENG",
+			"CustomerVisible": false
+		},
+		{
+			"ITProcessRecordId": "E-IM000008279",
+			"ActivityType": "Notification",
+			"Description": "Open Ticket have been updated. Update Email Notification was sent to - QA.CM.MANAGER, Assignment Group - MSCUST-A GSD",
+			"CreateTime": "\/Date(1375100602000)\/",
+			"OpenedById": "ASIAPACIFIC_LIPENG",
+			"CustomerVisible": false
+		},
+		{
+			"ITProcessRecordId": "E-IM000008279",
+			"ActivityType": "Notification",
+			"Description": "Update Email Notification was sent to - MSCUST-A GSD",
+			"CreateTime": "\/Date(1375100624000)\/",
+			"OpenedById": "ASIAPACIFIC_LIPENG",
+			"CustomerVisible": false
+		},
+		{
+			"ITProcessRecordId": "E-IM000008279",
+			"ActivityType": "Resolved",
+			"Description": "Resolution was provided on a fault that had occurred to a system either by \u0009\u000athe user support assistance, by support staff using remote support tools or\u0009\u000a by a technician attending the fault location",
+			"CreateTime": "\/Date(1375100624000)\/",
+			"OpenedById": "ASIAPACIFIC_LIPENG",
+			"CustomerVisible": false
+		},
+		{
+			"ITProcessRecordId": "E-IM000008279",
+			"ActivityType": "Update",
+			"Description": "29\/07\/2013 15:23:42 (ASIAPACIFIC_LIPENG):\u000aResolution was provided on a fault that had occurred to a system either by \u0009\u000athe user support assistance, by support staff using remote support tools or\u0009\u000a by a technician attending the fault location",
+			"CreateTime": "\/Date(1375100628000)\/",
+			"OpenedById": "ASIAPACIFIC_LIPENG",
+			"CustomerVisible": false
+		}],
+		"KPIMetrics": [{
+			"KpiMetricType": 3,
+			"KpiDuration": "PT0S",
+			"KpiExpirationTime": "\/Date(1375101054000)\/"
+		}],
+		"LastModifiedById": "sla9",
+		"LastModifiedTime": "\/Date(1375101310000)\/",
+		"OpenedById": "ASIAPACIFIC_LIPENG",
+		"OutageStartTime": "\/Date(-62135575200000-0600)\/",
+		"OutageEndTime": "\/Date(-62135575200000-0600)\/",
+		"Priority": 0,
+		"RelatedTickets": [{
+			"ITProcessRecordType": 2,
+			"ITProcessRecordId": "E-SD000027835"
+		}],
+		"ReopenedTime": "\/Date(-62135575200000-0600)\/",
+		"ResolvedTime": "\/Date(1375100622000)\/",
+		"ServiceLine": "application management services",
+		"ServiceType": "ams-business applications",
+		"ServiceArea": "custom applications",
+		"ServiceProvider": "MSCUST-A",
+		"Solution": "29\/07\/2013 15:23:42 (ASIAPACIFIC_LIPENG):\u000aResolution was provided on a fault that had occurred to a system either by \u0009\u000athe user support assistance, by support staff using remote support tools or\u0009\u000a by a technician attending the fault location",
+		"TicketSource": "Phone",
+		"Urgency": 0
+	}]
+}

@@ -1,0 +1,13 @@
+<windowsfeatures>
+  <windowsfeature name="Web-Server"/>
+  <windowsfeature name="Web-WHC"/>
+
+  <windowsfeature name="PowerShell-ISE"/>
+  <windowsfeature name="SNMP-Service"/>
+  <windowsfeature name="Telnet-Client"/>
+  <windowsfeature name="WAS"/>
+  <windowsfeature name="NET-Framework-Features"     targetos="2012" includeallsubfeature="true"/>
+  <windowsfeature name="NET-Framework-45-Features"  targetos="2012"/>
+  <windowsfeature name="Windows-Internal-Database"  targetos="2012"/>
+  <windowsfeature name="NET-Framework"              targetos="2008"/>
+</windowsfeatures>

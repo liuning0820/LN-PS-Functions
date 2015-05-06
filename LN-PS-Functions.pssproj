@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>6CAFC0C6-A428-4d30-A9F9-700E829FEA51</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MyApplication</RootNamespace>
+    <AssemblyName>MyApplication</AssemblyName>
+    <Name>LN-PS-Functions</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Creat-File-Daily.readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Add-IISAppPool.ps1" />
+    <Compile Include="Add-IISAppPool.source.xml" />
+    <Compile Include="Add-WindowsFeatures.ps1" />
+    <Compile Include="Analyze-LogFile.ps1" />
+    <Compile Include="Creat-File-Daily.ps1" />
+    <Compile Include="Create-Directory.ps1" />
+    <Compile Include="Create-Directory.source.xml" />
+    <Compile Include="Download-File-To-Install.ps1" />
+    <Compile Include="Invoke-Remote-PS-File.ps1" />
+    <Compile Include="Get-HardwareInfo.ps1" />
+    <Compile Include="Get-HardwareInfo.readme.txt" />
+    <Compile Include="Get-Software.ps1" />
+    <Compile Include="Install-Software.source.xml" />
+    <Compile Include="Install-Software.ps1" />
+    <Compile Include="Invoke-WebRequest-SA.ps1" />
+    <Compile Include="Invoke-WebRequest-SA.txt" />
+    <Compile Include="Script.ps1" />
+    <Compile Include="Add-WindowsFeatures.source.xml" />
+    <Compile Include="TestingScript.ps1" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="Build" />
+</Project>
