@@ -17,7 +17,5 @@
 Write-Host "Turn Off the UAC settings on Registry"
 $key = 'HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System'
 Set-ItemProperty $key EnableLUA 0
-
-
-Set-ItemProperty -Path $key -Name EnableLUA -Value 0
+#Set-ItemProperty -Path $key -Name EnableLUA -Value 0
 
