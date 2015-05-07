@@ -41,3 +41,33 @@ catch{
 
 
 
+
+<#
+    .NOTES
+        Created on : 2015-05-07
+        Created by : Liu Ning
+    .SYNOPSIS
+        Wrapper function for "svn.exe update"
+    .DESCRIPTION
+        Bring the latest changes from the repository into the working copy (HEAD revision).
+    .EXAMPLE
+        Update-SvnWorkingCopy -Path C:\Data\LNSvnProject\serviceagentCen
+#>
+function Update-SvnWorkingCopy {
+    [CmdletBinding()]
+    Param (
+        # The Path parameter identifies the directory of the working copy.
+        [Parameter(Position=0)]
+        [String]
+        $Path="C:\Data\LNSvnProject\serviceagentCen"
+    )
+    svn.exe update "$Path"
+}
+
+#Example:
+Set-Alias -Name udsvnwc -Value Update-SvnWorkingCopy
+udsvnwc -Path C:\Data\LNSvnProject\serviceagentCen
+
+
+
+
