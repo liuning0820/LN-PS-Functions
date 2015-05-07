@@ -1,0 +1,5 @@
+
+Test-EmptyFolder.ps1
+Script to check whether a given folder is empty or not.
+Function to be included in your script to test a folder if it's empty Example of call: Test-EmptyFolder c:\Kits.
+
