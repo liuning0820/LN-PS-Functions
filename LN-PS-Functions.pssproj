@@ -39,6 +39,7 @@
     <Compile Include="Create-Directory.ps1" />
     <Compile Include="Create-Directory.source.xml" />
     <Compile Include="Download-File-To-Install.ps1" />
+    <Compile Include="Get-Weather.ps1" />
     <Compile Include="Invoke-Remote-PS-File.ps1" />
     <Compile Include="Get-HardwareInfo.ps1" />
     <Compile Include="Get-HardwareInfo.readme.txt" />
