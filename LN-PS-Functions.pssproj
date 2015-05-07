@@ -48,6 +48,7 @@
     <Compile Include="Install-Software.ps1" />
     <Compile Include="Invoke-WebRequest-SA.ps1" />
     <Compile Include="Invoke-WebRequest-SA.txt" />
+    <Compile Include="Manage-PC.ps1" />
     <Compile Include="Script.ps1" />
     <Compile Include="Add-WindowsFeatures.source.xml" />
     <Compile Include="Show-Calendar.ps1" />

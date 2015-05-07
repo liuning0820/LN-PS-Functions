@@ -2,7 +2,7 @@
 ##	
 ##	Sample function to test whether a folder is empty or not
 ##
-##	Example of calling: Test-Emptyfolder c:\Logs\
+##	Example of calling: Test-Emptyfolder c:\Logs
 ## ############################################################
 
 
