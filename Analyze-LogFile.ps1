@@ -122,7 +122,64 @@ Analyze_LogFile_V2 -DirPath "\\D9W0602G.houston.hp.com\Logfiles\SA\" |Export-Csv
 Analyze_LogFile_V2 |Export-Csv C:\Logfiles\Local_Error_Result.csv
 
 
+#
+#Parse and Analyze LogFiles V 0.3
+#Include the progress of the parsing.
+# *.txt as the source format
+# Usage: Analyze_LogFile_V3 | Export-Csv C:\LogFiles\2.csv
 
+
+function Analyze_LogFile_V3 {
+[CmdletBinding()]
+param (
+    [Parameter(HelpMessage="Enter Log File Path, eg C:\Logfiles\*.txt")][string]$DirPath="C:\Logfiles\SA\",
+	[Parameter(HelpMessage="Enter Log File Path, eg C:\Logfiles\*.txt")][string]$FilePattern="*.txt",
+    [Parameter(HelpMessage="Enter KeyWord Search through the files, eg Error:")][string]$KeyWord="*|Error|*"
+)
+
+	if(Test-Path $DirPath)
+	{
+
+	#Variable for file count progress
+	$filecounter = 0
+
+	#Variable for count of files to process
+	$filecount = (get-Childitem -filter "*.txt" $DirPath | Where {$_.psIsContainer -eq $false}).Count
+	   foreach($file in Get-ChildItem -Filter $FilePattern $DirPath | Where {$_.psIsContainer -eq $false})
+	   {
+			#variale for the file contents
+			$filetext= Get-Content $file.FullName
+			Write-Host $file.FullName
+			#Loop through each line for the file
+			for ($i = 1; $i -lt $filetext.Length; $i++)
+			   { 
+
+				   if(($filetext[$i] -like $KeyWord))
+				   {
+					$output= New-Object psobject
+					$output | Add-Member NoteProperty "FileName" $file.Name
+					$output | Add-Member NoteProperty "Date" $filetext[$i].Split("|")[0]
+					$output | Add-Member NoteProperty "Module" $filetext[$i].Split("|")[1]
+					$output | Add-Member NoteProperty "ErrorMessage" $filetext[$i].Split("|")[2]
+					#Write-Host $i
+					#$output | Export-Csv C:\Logfiles\1.csv
+					$output
+				   }
+
+					 #Display progress bar to show progress
+					$filesprocessed = "$filecounter of $filecount"                      
+					Write-Progress -Id 1 -activity "Parsing files" -status "Files parsed: $filesprocessed" -percentComplete (($filecounter / $filecount)  * 100) 
+
+
+			   }
+
+	#Increment file counter used in progress bar
+    $filecounter++
+	   }
+	}
+}
+
+Analyze_LogFile_V3 | Export-Csv C:\LogFiles\2.csv
 
 
 
