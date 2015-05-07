@@ -36,8 +36,8 @@
     <Compile Include="Analyze-LogFile.ps1" />
     <Compile Include="Clear-PC.ps1" />
     <Compile Include="Creat-File-Daily.ps1" />
+    <Compile Include="Create-Directory.directories.xml" />
     <Compile Include="Create-Directory.ps1" />
-    <Compile Include="Create-Directory.source.xml" />
     <Compile Include="Download-File-To-Install.ps1" />
     <Compile Include="Get-Weather.ps1" />
     <Compile Include="Invoke-Remote-PS-File.ps1" />
@@ -51,6 +51,8 @@
     <Compile Include="Script.ps1" />
     <Compile Include="Add-WindowsFeatures.source.xml" />
     <Compile Include="Show-Calendar.ps1" />
+    <Compile Include="Test-EmptyFolder.ps1" />
+    <Compile Include="Test-EmptyFolder.readme.txt" />
     <Compile Include="TestingScript.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
