@@ -149,3 +149,8 @@ End {
     Write-Verbose "End function" 
     }    
 }
+
+
+#Example
+Get-Weather -Country "China" -City "ShangHai"
+Get-Weather -Country "China" -ListCities
