@@ -49,6 +49,7 @@
     <Compile Include="Invoke-WebRequest-SA.txt" />
     <Compile Include="Script.ps1" />
     <Compile Include="Add-WindowsFeatures.source.xml" />
+    <Compile Include="Show-Calendar.ps1" />
     <Compile Include="TestingScript.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
