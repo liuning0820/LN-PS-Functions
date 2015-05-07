@@ -183,6 +183,72 @@ Analyze_LogFile_V3 | Export-Csv C:\LogFiles\2.csv
 
 
 
+#
+#Parse and Analyze log file in xml format.
+# *.xml as the source format
+# Usage: Analyze_XML_Log_File_V1 | Export-Csv C:\LogFiles\2.csv
+function Analyze_XML_Log_File_V1 {
+[CmdletBinding()]
+param (
+    [Parameter(HelpMessage="Enter Log File Path, eg C:\Logfiles\*.txt")][string]$DirPath="C:\Data\LNGitProject\LN-PS-Functions\",
+	[Parameter(HelpMessage="Enter Log File Path, eg C:\Logfiles\*.txt")][string]$FilePattern="*.xml",
+    [Parameter(HelpMessage="Enter KeyWord Search through the files, eg Error:")][string]$KeyWord="The physical drive has failed."
+)
+
+	if(Test-Path $DirPath)
+	{
+	   foreach($file in Get-ChildItem -Filter $FilePattern $DirPath | Where {$_.psIsContainer -eq $false} )
+	   {
+	          #Create new XML object
+			  [System.Xml.XmlDocument] $xd = new-object System.Xml.XmlDocument
+
+			  #Load XML file
+			  $xd.load($file.FullName)   
+
+			#Get Physical Drives
+			$drives = $xd.SelectNodes("//Device") | Where {$_.devicetype -eq "PhysicalDrive"}
+			#Loop through each drive
+            foreach ($drive in $drives)
+			{
+				#Create PowerShell object to hold data
+				$Output = New-Object psobject
+
+				#Add filename member to PowerShell object
+				$Output | add-member NoteProperty "Filename" $file.FullName
+            
+				#Get device type and add to PowerShell Object      
+				$Output | add-member NoteProperty "Devicetype" $drive.devicetype
+
+				#Get drive ID and add to PowerShell Object
+				$Output | add-member NoteProperty "Drive ID" $drive.id
+
+				#Get marketing name and add to PowerShell Object
+				$Output | add-member NoteProperty "MarketingName" ($drive.marketingName).ToString().ToUpper()
+
+				#check if drive logged a failure
+				$driveerror = ($drive.errors).message | where {$_.message -eq $KeyWord}
+				if ($driveerror.message -match $KeyWord) 
+				{
+				$Output | add-member NoteProperty "Marked as Failed" "Yes"
+				}                    
+				else 
+				{
+				$Output | add-member NoteProperty "Marked as Failed" "No"
+				}
+
+				 #Output the PowerShell object data                          
+				$Output
+
+			}    
+			
+	   }
+	}
+}
+
+Analyze_XML_Log_File_V1
+
+
+
 
 
 
