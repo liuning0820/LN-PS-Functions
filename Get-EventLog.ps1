@@ -21,3 +21,5 @@ Measure-Command -Expression {[datetime]::now}
 
 Measure-Command -Expression {get-date}
 
+#Get event log since yesterday to today
+Get-EventLog -LogName Application -EntryType Error -After (Get-Date).AddDays(-1).ToShortDateString() -Before (Get-Date).ToShortDateString() |select -expandproperty Message
