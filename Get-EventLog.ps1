@@ -8,3 +8,16 @@ Get-EventLog -LogName Application -Newest 1 |select Message
 Get-EventLog -LogName Application -Newest 10 -Message "*Microsoft*" |select Message
 
 Get-EventLog -LogName Application -Newest 10 -Message "*Microsoft*" |select -expandproperty Message
+
+#
+# Measure Performance of Event Log Command
+#
+#Take less than 1 second
+Measure-Command -Expression {Get-EventLog -LogName Application}
+#Takes about 5 second
+Measure-Command -Expression {Get-WinEvent @{logname='application'}}
+
+Measure-Command -Expression {[datetime]::now}
+
+Measure-Command -Expression {get-date}
+
