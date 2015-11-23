@@ -32,7 +32,6 @@ Import-Csv C:\1.csv | foreach {
 
 	timeout(30)
 	Write-Host $newFileName
-
 	
 
 }
