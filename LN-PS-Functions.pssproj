@@ -39,6 +39,7 @@
     <Compile Include="Create-Directory.directories.xml" />
     <Compile Include="Create-Directory.ps1" />
     <Compile Include="Download-File-To-Install.ps1" />
+    <Compile Include="FindFilesAndExportToCsv.ps1" />
     <Compile Include="Get-EventLog.ps1" />
     <Compile Include="Get-Weather.ps1" />
     <Compile Include="Invoke-Remote-PS-File.ps1" />
