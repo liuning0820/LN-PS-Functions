@@ -10,6 +10,8 @@ $fileName = Read-Host -Verbose "Please Enter File Name to Search"
 write-Host "---------------------------------------------" -ForegroundColor Yellow
 "`n"
 
+
+
 $filePath= "C:\Users\niliu\Documents\LNPicture"
 $fileName = "*.mov"
 
