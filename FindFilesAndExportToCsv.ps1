@@ -3,14 +3,14 @@
 #
 
 "`n"
-write-Host "---------------------------------------------" -ForegroundColor Yellow
-$filePath = Read-Host "Please Enter File Path to Search"
+write-Host  -Verbose  "---------------------------------------------" -ForegroundColor Yellow
+$filePath = Read-Host -Verbose "Please Enter File Path to Search"
 write-Host "---------------------------------------------" -ForegroundColor Green
-$fileName = Read-Host "Please Enter File Name to Search"
+$fileName = Read-Host -Verbose "Please Enter File Name to Search"
 write-Host "---------------------------------------------" -ForegroundColor Yellow
 "`n"
 
-$filePath= "C:\Users\niliu\OneDrive\LNPicture"
+$filePath= "C:\Users\niliu\Documents\LNPicture"
 $fileName = "*.mov"
 
 Get-ChildItem -Recurse -Force $filePath -ErrorAction SilentlyContinue | Where-Object { ($_.PSIsContainer -eq $false) -and  ( $_.Name -like "*$fileName*") } | Select-Object Directory,Name| Export-Csv C:\1.csv -Encoding UTF8
