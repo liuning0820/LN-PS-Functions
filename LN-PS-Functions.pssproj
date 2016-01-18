@@ -38,6 +38,7 @@
     <Compile Include="Creat-File-Daily.ps1" />
     <Compile Include="Create-Directory.directories.xml" />
     <Compile Include="Create-Directory.ps1" />
+    <Compile Include="DataExportToExcel\GetTop10ProcessToExcelChart.ps1" />
     <Compile Include="Download-File-To-Install.ps1" />
     <Compile Include="FindFilesAndExportToCsv.ps1" />
     <Compile Include="Get-EventLog.ps1" />
@@ -57,6 +58,9 @@
     <Compile Include="Test-EmptyFolder.ps1" />
     <Compile Include="Test-EmptyFolder.readme.txt" />
     <Compile Include="TestingScript.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataExportToExcel\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
