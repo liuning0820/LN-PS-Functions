@@ -12,6 +12,11 @@ $output | Add-Member NoteProperty "Application" $fileName.Split("_")[1]
 $output | Add-Member NoteProperty "Module" $fileName.Split("_")[2]
 $output | Add-Member NoteProperty "TicketNumber" $fileName.Split("_")[3]
 
+#The Start-Transcript cmdlet creates a record of all or part of a Windows PowerShell session in a text file.
+Start-Transcript
+#do something then
+Stop-Transcript
+
 
 
 
