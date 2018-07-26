@@ -5,7 +5,7 @@
      $date = date -format "yyyyMMdd"
      #try to resume
      if (test-path "d:\temp\timeRecord$date.txt") {
-         Get-Content "d:\temp\timeRecord$date.txt" | % {if ($_ -match "\w+\s+\d+") {
+         gc "d:\temp\timeRecord$date.txt" | % {if ($_ -match "\w+\s+\d+") {
              $groups = [Regex]::Match($_, "^(\w+\s?\w+)\s+(\d+)").Groups;
              $record[$groups[1].Value] = [int]::Parse($groups[2].Value);
          }}
@@ -13,7 +13,7 @@
      #start to monitor
      while ($true)
      {
-         $titles = Get-Process | ? {$_.MainWindowTitle} | select MainWindowTitle
+         $titles = ps | ? {$_.MainWindowTitle} | select MainWindowTitle
          $titles | % {
              if ($_ -match "Google 阅读器 - Windows Internet Explorer") {$record["Google Reader"]++;}
              else {if ($_ -match "Gmail - Windows Internet Explorer") {$record["Gmail"]++;}

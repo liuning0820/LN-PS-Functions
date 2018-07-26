@@ -21,13 +21,13 @@
 [CmdletBinding()]
 Param (
         [Parameter(Position=0,
-            Mandatory=$false, 
+            Mandatory=$false,
             ValueFromPipeline=$true,
             ValueFromPipelineByPropertyName=$true)]
         [string[]]$ComputerName
     )
 
-begin{   
+begin{
 
 }
 process{
@@ -92,8 +92,8 @@ end{
                 "LogicalDisk$($i)BlockSize3"=$LogicalDisk.BlockSize;
                 "LogicalDisk$($i)NumberOfBlocks"=$LogicalDisk.NumberOfBlocks
             }
-            $i++   
-        }    
+            $i++
+        }
         $i=0
         foreach($DiskPartition in $DiskPartitions){
             $Props+=@{
@@ -105,8 +105,8 @@ end{
                 "DiskPartition$($i)Description"=$LogicalDisk.Description;
                 "DiskPartition$($i)NumberOfBlocks"=$LogicalDisk.NumberOfBlocks
             }
-            $i++  
-        }    
+            $i++
+        }
         $i=0
         foreach($DiskDrive in $DiskDrives){
             $Props+=@{
@@ -121,8 +121,8 @@ end{
                 "DiskDrive$($i)Partitions"=$DiskDrive.Partitions;
                 "DiskDrive$($i)Size"=$DiskDrive.Size
             }
-            $i++ 
-        }    
+            $i++
+        }
         $i=0
         foreach($NIC in $NICs){
             $Props+=@{

@@ -12,8 +12,8 @@
           WindowsFeature IIS
           {
              # To ensure that the role is not installed, set Ensure to "Absent"
-              Ensure = "Present" 
-              Name = "Web-Server" # Use the Name property from Get-WindowsFeature  
+              Ensure = "Present"
+              Name = "Web-Server" # Use the Name property from Get-WindowsFeature
           }
 
           # You can use the File resource to create files and folders
@@ -25,10 +25,9 @@
              Recurse = $true
              SourcePath = $WebsiteFilePath
              DestinationPath = "C:\inetpub\wwwroot"
-            
              # Ensure that the IIS block is successfully run first before
              # configuring this resource
-             Requires = "[WindowsFeature]IIS"  # Use Requires for dependencies     
+             Requires = "[WindowsFeature]IIS"  # Use Requires for dependencies
           }
        }
     }
