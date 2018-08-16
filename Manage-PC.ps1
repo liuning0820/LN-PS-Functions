@@ -4,18 +4,22 @@
 
 
 <#
-.SYNOPSIS    
+.SYNOPSIS
     Turn OFF the UAC setting
-.DESCRIPTION 
+.DESCRIPTION
     Turn OFF the UAC setting
-.EXAMPLE     
+.EXAMPLE
     TurnOffUAC
-.NOTES       
+.NOTES
     Please keep above information
 #>
+function TurnOffUAC {
 
-Write-Host "Turn Off the UAC settings on Registry"
+    Write-Host "Turn Off the UAC settings on Registry"
 $key = 'HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System'
 Set-ItemProperty $key EnableLUA 0
 #Set-ItemProperty -Path $key -Name EnableLUA -Value 0
+
+}
+
 
