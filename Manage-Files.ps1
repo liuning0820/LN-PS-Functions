@@ -28,7 +28,7 @@ Compare-Object $source $targe -IncludeEqual
 Function Rename-Files-In-Bunch{
 param(
     [Parameter(Mandatory=$False)]
-    [string] $prefix="[Ñ¸À×ÏÂÔØwww.2tu.cc]",
+    [string] $prefix="[www.2tu.cc]",
 	[Parameter(Mandatory=$false)]
     [string] $FileRoot = "G:\"
 )
